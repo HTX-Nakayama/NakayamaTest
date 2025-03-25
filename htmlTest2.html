@@ -2,14 +2,18 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Redirecting...</title>
-    <script type="text/javascript">
+    <title>HTML Test</title>
+</head>
+<body>
+    <h1>3DCG起動</h1>
+    <p id="paramDisplay">パラメータを取得中...</p>
+    <script>
         // URLパラメータを取得する関数
         function getQueryParam(param) {
             const urlParams = new URLSearchParams(window.location.search);
             return urlParams.get(param);
         }
+
         // 'exePath'という名前のパラメータを取得
         const exePath = getQueryParam('exePath');
         console.log('取得したExeパス:', exePath);
@@ -17,8 +21,5 @@
         // 取得したパラメータをページ上に表示
         document.getElementById('paramDisplay').textContent = '取得したExeパス: ' + exePath;
     </script>
-</head>
-<body>
-    <p>Redirecting...</p>
 </body>
 </html>
