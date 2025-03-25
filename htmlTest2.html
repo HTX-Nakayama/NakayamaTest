@@ -19,7 +19,8 @@
 
         // カスタムURLスキームを呼び出してExeファイルを実行
         if (exePath) {
-            window.location.href = "ue5app://${exePath}";
+            const encodedExePath = encodeURIComponent(exePath);
+            window.location.href = `myapp://${encodedExePath}`;
         }
     </script>
 </body>
