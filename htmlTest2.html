@@ -13,11 +13,13 @@
         // 'exePath'という名前のパラメータを取得
         const exePath = getQueryParam('exePath');
         console.log('取得したExeパス:', exePath);
-        
-        window.onload = function() {
-            const encodedExePath = encodeURIComponent(exePath);
-            window.location.href = "ue5app://${encodedExePath}";
-        };
+
+        // 取得したパラメータをページ上に表示
+        document.getElementById('paramDisplay').textContent = '取得したExeパス: ' + exePath;
+        //window.onload = function() {
+        //    const encodedExePath = encodeURIComponent(exePath);
+        //    window.location.href = "ue5app://${encodedExePath}";
+        //};
     </script>
 </head>
 <body>
