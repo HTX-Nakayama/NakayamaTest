@@ -2,26 +2,25 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>HTML Test</title>
-</head>
-<body>
-    <h1>3DCG起動</h1>
-    <script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Redirecting...</title>
+    <script type="text/javascript">
         // URLパラメータを取得する関数
         function getQueryParam(param) {
             const urlParams = new URLSearchParams(window.location.search);
             return urlParams.get(param);
         }
-
         // 'exePath'という名前のパラメータを取得
         const exePath = getQueryParam('exePath');
         console.log('取得したExeパス:', exePath);
-
-        // カスタムURLスキームを呼び出してExeファイルを実行
-        if (exePath) {
+        
+        window.onload = function() {
             const encodedExePath = encodeURIComponent(exePath);
             window.location.href = "ue5app://${encodedExePath}";
-        }
+        };
     </script>
+</head>
+<body>
+    <p>Redirecting...</p>
 </body>
 </html>
