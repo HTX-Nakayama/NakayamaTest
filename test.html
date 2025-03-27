@@ -25,6 +25,11 @@
         if (exePath) {
             window.location.href = "ue5app://" + exePath;
         }
+        
+        // 処理が終わった後にページを閉じる
+        setTimeout(function() {
+            window.close();
+        }, 2000); // 5秒後にページを閉じる
     </script>
 </body>
 </html>
