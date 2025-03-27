@@ -23,7 +23,7 @@
 
         // カスタムURLスキームを呼び出してExeファイルを実行
         if (exePath) {
-            window.location.href = "ue5app://{$exePath}";
+            window.location.href = "ue5app://" + encodeURIComponent($exePath);
         }
     </script>
 </body>
