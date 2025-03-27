@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>HTML Test</title>
+</head>
+<body>
+    <h1>3DCG起動</h1>
+    <p id="paramDisplay">パラメータを取得中...</p>
+    <script>
+        // URLパラメータを取得する関数
+        function getQueryParam(param) {
+            const urlParams = new URLSearchParams(window.location.search);
+            return urlParams.get(param);
+        }
+
+        // 'exePath'という名前のパラメータを取得
+        const exePath = getQueryParam('exePath');
+        console.log('取得したExeパス:', exePath);
+
+        // 取得したパラメータをページ上に表示
+        document.getElementById('paramDisplay').textContent = "取得したExeパス: " + "ue5app://" + exePath;
+
+        // カスタムURLスキームを呼び出してExeファイルを実行
+        if (exePath) {
+            window.location.href = "ue5app://" + exePath;
+        }
+    </script>
+</body>
+</html>
